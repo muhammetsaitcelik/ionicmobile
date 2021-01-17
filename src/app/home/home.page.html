@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      170202025-Coin Market
+      <ion-col text-center>
+        Your Registered EmailID : {{userEmail}}
+      </ion-col>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  
+  <title>Ionic Template</title>
+
+  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+  <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+</head>
+<body ng-controller="MyCtrl as ctrl">
+  <ion-header-bar class="bar-stable">
+      <h1 class="title">Service Provider Details</h1>
+  </ion-header-bar>
+  <ion-content>
+    <table class="table">
+      <tbody>
+      
+          <tr>
+            <th> Name </th>
+            <th> Usd değeri </th>
+            <th> Piyasadaki hacim </th>
+            <th> 24 saatte değişim </th>
+          </tr>
+      
+        <tr *ngFor="let tag of items">
+        
+        
+          <td>{{tag.name}}</td>
+          <td>{{tag.usd}}</td>
+          <td>{{tag.usd_24h_vol}}</td>
+          <td>{{tag.usd_24h_change}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  
+    <ion-button (click)="goToRealdata()"> Coin Al/Sat</ion-button>
+
+  </ion-content>
+</body>
